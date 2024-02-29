@@ -17,13 +17,13 @@ export const GridContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: ${gridTemplateColumns};
     grid-template-rows: repeat(2, 200px);
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: repeat(1, 200px);
-    grid-template-rows: repeat(4, 200px);
+    grid-template-columns: repeat(1, 170px);
+    grid-template-rows: repeat(2, 140px);
+    padding-bottom: 20px;
   }
 `;
 
@@ -47,8 +47,17 @@ export const CardContainer = styled.div`
   }
 
   a {
-    margin-bottom: 2;
+    margin-bottom: 2px;
     color: #8dc6ff;
     font-size: 0.8rem;
+  }
+
+  @media (max-width: 480px) {
+    h3 {
+      font-size: 0.6rem;
+    }
+    img {
+      width: 75px;
+    }
   }
 `;

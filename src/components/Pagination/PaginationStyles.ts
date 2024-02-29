@@ -4,6 +4,7 @@ export const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 20px;
 
   button {
     padding: 10px 20px;
@@ -22,7 +23,7 @@ export const PaginationContainer = styled.div`
     }
 
     @media (max-width: 480px) {
-      padding: 10px 10px;
+      padding: 10px 20px;
       font-size: 0.6rem;
     }
   }
