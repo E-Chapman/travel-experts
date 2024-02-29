@@ -48,6 +48,9 @@ export const CardContainer = styled.div`
   padding: 8px;
   text-align: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  &:hover {
+    transform: scale(1.1);
+  }
 
   img {
     width: 100px;
@@ -66,6 +69,7 @@ export const CardContainer = styled.div`
     margin-bottom: 2px;
     color: #8dc6ff;
     font-size: 0.8rem;
+    text-decoration: none;
   }
 
   @media (max-width: 480px) {

@@ -49,7 +49,7 @@ const TravelExpertsList: React.FC = () => {
             <h3>
               {first_name} {last_name}
             </h3>
-            <a>{email}</a>
+            <a href={`mailto:${email}`}>{email}</a>
           </CardContainer>
         ))}
       </GridContainer>
