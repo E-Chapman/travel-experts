@@ -3,6 +3,22 @@ import styled from "styled-components";
 const gridTemplateColumns = "repeat(2, 200px)";
 const gridTemplateRows = "repeat(2, 200px)";
 
+export const IntroParagraph = styled.p`
+  font-size: 1rem;
+  font-family: "Popins", sans-serif;
+  color: #8dc6ff;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px 20px;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+
 export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: ${gridTemplateColumns};
