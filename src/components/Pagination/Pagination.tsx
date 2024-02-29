@@ -1,4 +1,4 @@
-import { PaginationContainer } from "./PaginationStyles";
+import { PaginationContainer } from "./Pagination.styles";
 
 interface PaginationProps {
   currentPage: number;
