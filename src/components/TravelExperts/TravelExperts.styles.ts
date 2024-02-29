@@ -18,12 +18,12 @@ export const GridContainer = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: ${gridTemplateColumns};
-    grid-template-rows: repeat(3, 200px);
+    grid-template-rows: repeat(2, 200px);
   }
 
   @media (max-width: 480px) {
     grid-template-columns: repeat(1, 200px);
-    grid-template-rows: repeat(6, 200px);
+    grid-template-rows: repeat(4, 200px);
   }
 `;
 

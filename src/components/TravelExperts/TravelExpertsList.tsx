@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { CardContainer, GridContainer } from "./TravelExperts.styles";
+import Pagination from "../Pagination/Pagination";
 
 interface Expert {
   id: number;
@@ -24,32 +25,25 @@ const TravelExpertsList: React.FC = () => {
       .catch((error) => console.error("Error fetching Travel Experts:", error));
   }, [currentPage]);
 
-  const handleNextPage = () => {
-    setCurrentPage((prevPage) => prevPage + 1);
-  };
-
-  const handlePreviousPage = () => {
-    setCurrentPage((prevPage) => prevPage - 1);
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
   };
 
   return (
-    <GridContainer>
-      {experts.map(({ id, first_name, last_name, email, avatar }) => (
-        <CardContainer key={id}>
-          <img src={avatar} alt={`${first_name}'s avatar`} />
-          <h3>
-            {first_name} {last_name}
-          </h3>
-          <a>{email}</a>
-        </CardContainer>
-      ))}
-      <div>
-        <button onClick={handlePreviousPage} disabled={currentPage === 1}>
-          Previous Page
-        </button>
-        <button onClick={handleNextPage}>Next Page</button>
-      </div>
-    </GridContainer>
+    <>
+      <GridContainer>
+        {experts.map(({ id, first_name, last_name, email, avatar }) => (
+          <CardContainer key={id}>
+            <img src={avatar} alt={`${first_name}'s avatar`} />
+            <h3>
+              {first_name} {last_name}
+            </h3>
+            <a>{email}</a>
+          </CardContainer>
+        ))}
+      </GridContainer>
+      <Pagination currentPage={currentPage} onPageChange={handlePageChange} />
+    </>
   );
 };
 
