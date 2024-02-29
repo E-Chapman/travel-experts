@@ -7,10 +7,3 @@
 body {
   background: linear-gradient(90deg, #09203f 0%, #537895 100%);
 }
-
-.logo {
-  height: 30px;
-  padding: 0.8em;
-  will-change: filter;
-  transition: filter 300ms;
-}
