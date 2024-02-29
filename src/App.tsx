@@ -1,14 +1,14 @@
-import logo from "./assets/logo.jpg";
+import logo from "./assets/logo.png";
 import "./App.css";
+import TravelExpertsList from "./components/TravelExperts/TravelExpertsList";
 
 const App = () => {
   return (
     <>
       <div>
-        <img src={logo} className="logo" alt="Astronaut logo" />
+        <img src={logo} className="logo" alt="solar system logo" />
       </div>
-      <h1>Space Travel Experts</h1>
-      <div className="card">Travel Experts to be added here</div>
+      <TravelExpertsList />
     </>
   );
 };
