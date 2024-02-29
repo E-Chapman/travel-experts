@@ -15,8 +15,11 @@ const TravelExpertsList: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
+    axios;
+    const apiUrl = `https://reqres.in/api/users?page=${currentPage}&per_page=4`;
+
     axios
-      .get(`https://reqres.in/api/users?page=${currentPage}&per_page=4`)
+      .get(apiUrl)
       .then((response) => setExperts(response.data.data))
       .catch((error) => console.error("Error fetching Travel Experts:", error));
   }, [currentPage]);
@@ -31,13 +34,13 @@ const TravelExpertsList: React.FC = () => {
 
   return (
     <GridContainer>
-      {experts.map((expert) => (
-        <CardContainer key={expert.id}>
-          <img src={expert.avatar} alt={`${expert.first_name}'s avatar`} />
+      {experts.map(({ id, first_name, last_name, email, avatar }) => (
+        <CardContainer key={id}>
+          <img src={avatar} alt={`${first_name}'s avatar`} />
           <h3>
-            {expert.first_name} {expert.last_name}
+            {first_name} {last_name}
           </h3>
-          <a>{expert.email}</a>
+          <a>{email}</a>
         </CardContainer>
       ))}
       <div>
