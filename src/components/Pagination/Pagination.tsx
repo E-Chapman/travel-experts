@@ -26,7 +26,11 @@ const Pagination: React.FC<PaginationProps> = ({
       >
         Back
       </button>
-      <button onClick={handleNextPage} aria-label="Next Page">
+      <button
+        onClick={handleNextPage}
+        disabled={currentPage === 2}
+        aria-label="Next Page"
+      >
         Next
       </button>
     </PaginationContainer>

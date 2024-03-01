@@ -20,13 +20,17 @@ const TravelExpertsList: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    axios;
+    const maxPages = 2;
     const apiUrl = `https://reqres.in/api/users?page=${currentPage}&per_page=4`;
 
-    axios
-      .get(apiUrl)
-      .then((response) => setExperts(response.data.data))
-      .catch((error) => console.error("Error fetching Travel Experts:", error));
+    if (currentPage <= maxPages) {
+      axios
+        .get(apiUrl)
+        .then((response) => setExperts(response.data.data))
+        .catch((error) =>
+          console.error("Error fetching Travel Experts:", error)
+        );
+    }
   }, [currentPage]);
 
   const handlePageChange = (page: number) => {
