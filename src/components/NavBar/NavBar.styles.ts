@@ -7,6 +7,7 @@ export const NavBarContainer = styled.nav`
   font-family: "Popins", sans-serif;
   color: #8dc6ff;
   padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   .logo {
     height: 50px;
