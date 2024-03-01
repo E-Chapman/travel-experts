@@ -10,12 +10,13 @@ export const IntroParagraph = styled.p`
   line-height: 1.5;
   text-align: center;
   margin-bottom: 20px;
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   padding: 30px 20px;
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
+    width: 80%;
   }
 
   @media (max-width: 480px) {
