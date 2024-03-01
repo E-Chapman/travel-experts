@@ -25,6 +25,10 @@ export const NavBarContainer = styled.nav`
   li {
     cursor: pointer;
     transition: color 0.3s ease;
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
   }
 
   .experts {
@@ -34,10 +38,10 @@ export const NavBarContainer = styled.nav`
   }
 
   @media (max-width: 768px) {
-    padding: 10px 10px;
+    padding: 10px;
   }
 
   @media (max-width: 480px) {
-    padding: 10px 5px;
+    padding: 10px;
   }
 `;
