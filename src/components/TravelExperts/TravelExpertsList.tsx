@@ -15,12 +15,16 @@ interface Expert {
   avatar: string;
 }
 
+// Two pages of Travel Experts with four per page
 const maxPages = 2;
 const perPage = 4;
 
+// Return a string representing the API URL
 const getApiUrl = (page: number): string =>
   `https://reqres.in/api/users?per_page=${perPage}&page=${page}`;
 
+// The TravelExpertsList component fetches a list of users from an API and displays them in a grid
+// A pagination component allows users to navigate through the list of experts
 const TravelExpertsList: React.FC = () => {
   const queryParams = new URLSearchParams(window.location.search);
   const page = parseInt(queryParams.get("page") || "1");
@@ -28,6 +32,7 @@ const TravelExpertsList: React.FC = () => {
   const [experts, setExperts] = useState<Expert[]>([]);
   const [currentPage, setCurrentPage] = useState(page);
 
+  // Update the URL with the current page
   queryParams.set("page", currentPage.toString());
   const newUrl = `${window.location.pathname}?${queryParams.toString()}`;
   window.history.pushState({}, "", newUrl);
@@ -45,6 +50,7 @@ const TravelExpertsList: React.FC = () => {
     }
   }, [currentPage]);
 
+  // Update the current page when the user clicks on a page number
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
