@@ -15,13 +15,25 @@ interface Expert {
   avatar: string;
 }
 
+const maxPages = 2;
+const perPage = 4;
+
+const getApiUrl = (page: number): string =>
+  `https://reqres.in/api/users?per_page=${perPage}&page=${page}`;
+
 const TravelExpertsList: React.FC = () => {
+  const queryParams = new URLSearchParams(window.location.search);
+  const page = parseInt(queryParams.get("page") || "1");
+
   const [experts, setExperts] = useState<Expert[]>([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(page);
+
+  queryParams.set("page", currentPage.toString());
+  const newUrl = `${window.location.pathname}?${queryParams.toString()}`;
+  window.history.pushState({}, "", newUrl);
 
   useEffect(() => {
-    const maxPages = 2;
-    const apiUrl = `https://reqres.in/api/users?page=${currentPage}&per_page=4`;
+    const apiUrl = getApiUrl(currentPage);
 
     if (currentPage <= maxPages) {
       axios
