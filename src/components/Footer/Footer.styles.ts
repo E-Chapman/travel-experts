@@ -10,9 +10,9 @@ export const FooterContainer = styled.footer`
   padding: 10px;
   font-family: "Popins", sans-serif;
   position: fixed;
+  left: 0;
   bottom: 0;
   width: 100%;
-  z-index: 100;
 
   @media (max-width: 768px) {
     font-size: 0.7rem;
@@ -21,6 +21,7 @@ export const FooterContainer = styled.footer`
   @media (max-width: 480px) {
     font-size: 0.6rem;
     height: 30px;
+    width: 100%;
   }
 `;
 
